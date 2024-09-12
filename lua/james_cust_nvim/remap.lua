@@ -54,3 +54,6 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
         update_in_insert = true,
     }
 )
+
+-- remap to set relativenumber in file explorer
+vim.keymap.set("n", "<leader>rl", ":set relativenumber <enter>")
