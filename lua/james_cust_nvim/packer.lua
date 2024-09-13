@@ -26,8 +26,15 @@ return require('packer').startup(function(use)
         'windwp/nvim-ts-autotag'
     }
 
+    -- Plenary
+    use "nvim-lua/plenary.nvim" 
+
     -- Harpoon for quick file navigation
-    use 'theprimeagen/harpoon'
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
 
     -- Undo tree for visualizing undo history
     use 'mbbill/undotree'
@@ -69,5 +76,8 @@ return require('packer').startup(function(use)
 
     -- Multi cursor functionality
     use 'mg979/vim-visual-multi'
+
+    -- indenting lines
+    use "lukas-reineke/indent-blankline.nvim"
 end)
 
