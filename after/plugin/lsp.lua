@@ -3,6 +3,7 @@ local lsp_zero = require('lsp-zero')
 require('luasnip.loaders.from_vscode').lazy_load()
 require("mason").setup()
 require('mason-lspconfig').setup({
+  ensure_installed = { "eslint" },
   handlers = {
     -- this first function is the "default handler"
     -- it applies to every language server without a "custom handler"
@@ -11,8 +12,8 @@ require('mason-lspconfig').setup({
     end,
 
     -- this is the "custom handler" for `tsserver`
-    tsserver = function()
-      require('lspconfig').tsserver.setup({
+    eslint = function()
+      require('lspconfig').eslint.setup({
         single_file_support = false,
         on_attach = function(client, bufnr)
         end
