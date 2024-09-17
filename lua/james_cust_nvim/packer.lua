@@ -75,7 +75,7 @@ return require('packer').startup(function(use)
     }
 
     -- Multi cursor functionality
-    use 'mg979/vim-visual-multi'
+    --use 'mg979/vim-visual-multi'
 
     -- indenting lines
     use "lukas-reineke/indent-blankline.nvim"
