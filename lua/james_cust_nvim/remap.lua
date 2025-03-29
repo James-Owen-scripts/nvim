@@ -29,6 +29,10 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+-- Insert and visual now to <C-[>... nice
+vim.keymap.set("i", "<C-[>", "<Esc>")
+vim.keymap.set("v", "<C-[>", "<Esc>")
+
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
