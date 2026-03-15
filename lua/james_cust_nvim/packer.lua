@@ -80,4 +80,3 @@ return require('packer').startup(function(use)
     -- indenting lines
     use "lukas-reineke/indent-blankline.nvim"
 end)
-
