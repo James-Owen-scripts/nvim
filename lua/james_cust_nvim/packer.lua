@@ -1,72 +1,68 @@
--- Ensure packer.nvim is loaded
 vim.cmd [[packadd packer.nvim]]
+-- Ensure packer.nvim is loaded
 
--- Initialize and configure packer.nvim
 return require('packer').startup(function(use)
-    -- Packer can manage itself
+
+    -- Packer manages itself
     use 'wbthomason/packer.nvim'
 
-    -- Telescope for fuzzy finding
+    -------------------------------------------------
+    -- UI / Navigation
+    -------------------------------------------------
+
     use {
-        'nvim-telescope/telescope.nvim', 
+        'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    -- Gruvbox theme
-    use { "ellisonleao/gruvbox.nvim" }
+    use "ellisonleao/gruvbox.nvim"
 
-    -- Treesitter for better syntax highlighting and parsing
+    use "nvim-lua/plenary.nvim"
+
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { "nvim-lua/plenary.nvim" }
+    }
+
+    use 'mbbill/undotree'
+    use 'tpope/vim-fugitive'
+
+    -------------------------------------------------
+    -- Treesitter
+    -------------------------------------------------
+
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+
     use 'nvim-treesitter/playground'
-    use {
-        'windwp/nvim-ts-autotag'
-    }
+    use 'windwp/nvim-ts-autotag'
 
-    -- Plenary
-    use "nvim-lua/plenary.nvim" 
+    -------------------------------------------------
+    -- LSP + Completion (MODERN STACK)
+    -------------------------------------------------
 
-    -- Harpoon for quick file navigation
-    use {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        requires = { {"nvim-lua/plenary.nvim"} }
-    }
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+    use 'neovim/nvim-lspconfig'
 
-    -- Undo tree for visualizing undo history
-    use 'mbbill/undotree'
-
-    -- Fugitive for Git integration
-    use 'tpope/vim-fugitive'
-
-    -- LSP and autocomplete setup
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        requires = {
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
-            {'neovim/nvim-lspconfig'},
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'L3MON4D3/LuaSnip'},
-        }
-    }
-
-    -- snippets
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
 
-    -- Mason for managing LSP servers, linters, and formatters
-    use 'williamboman/mason.nvim'
+    -------------------------------------------------
+    -- Editor enhancements
+    -------------------------------------------------
 
-    -- Auto closing braces and quotes
     use 'Raimondi/delimitMate'
 
-    -- Commenting utility
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -74,9 +70,6 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- Multi cursor functionality
-    --use 'mg979/vim-visual-multi'
-
-    -- indenting lines
     use "lukas-reineke/indent-blankline.nvim"
+
 end)
