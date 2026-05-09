@@ -12,3 +12,5 @@ vim.keymap.set('n', '<leader>ps', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end, { noremap = true })
 
+vim.keymap.set('n', '<leader>pd', builtin.lsp_definitions, {desc = "Go to Definition"})
+vim.keymap.set('n', '<leader>pr', builtin.lsp_references, {desc = "Go to References"})

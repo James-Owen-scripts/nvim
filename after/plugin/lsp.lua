@@ -17,6 +17,16 @@ vim.lsp.config("clangd", {
     capabilities = capabilities,
 })
 
+vim.lsp.config("Clangd", {
+    capabilities = capabilities,
+    cmd = {
+        "clangd",
+        "--compile-commands-dir=build",
+        "--header-insertion=never",
+        "--background-index",
+        "--clang-tidy",    }
+})
+
 vim.lsp.config("eslint", {
     capabilities = capabilities,
     single_file_support = false,
