@@ -6,10 +6,7 @@ return require('packer').startup(function(use)
     -- Packer manages itself
     use 'wbthomason/packer.nvim'
 
-    -------------------------------------------------
     -- UI / Navigation
-    -------------------------------------------------
-
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
@@ -24,12 +21,11 @@ return require('packer').startup(function(use)
     }
 
     use 'mbbill/undotree'
+    
+    -- Git tools
     use 'tpope/vim-fugitive'
 
-    -------------------------------------------------
     -- Treesitter
-    -------------------------------------------------
-
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
@@ -37,13 +33,12 @@ return require('packer').startup(function(use)
 
     use 'windwp/nvim-ts-autotag'
 
-    -------------------------------------------------
-    -- LSP + Completion (MODERN STACK)
-    -------------------------------------------------
-
+    -- LSP + Autocompletion
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use 'neovim/nvim-lspconfig'
+
+    use "VidocqH/lsp-lens.nvim"
 
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -53,12 +48,10 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
 
-    -------------------------------------------------
-    -- Editor enhancements
-    -------------------------------------------------
-
+    -- Auto closing quotes {}
     use 'Raimondi/delimitMate'
 
+    -- comment out code (gcc)
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -66,6 +59,24 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- Indent line
     use "lukas-reineke/indent-blankline.nvim"
 
+    -- Debugging (REQUIRED)
+    use 'mfussenegger/nvim-dap'
+
+    use "nvim-neotest/nvim-nio"
+
+    use {
+        "rcarriga/nvim-dap-ui",
+        requires = { "mfussenegger/nvim-dap" },
+        config = function()
+            require("dapui").setup()
+        end
+    }
+
+    use 'theHamsta/nvim-dap-virtual-text'
+
+    -- Optional but VERY helpful
+    use 'jay-babu/mason-nvim-dap.nvim'
 end)
