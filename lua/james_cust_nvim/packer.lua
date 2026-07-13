@@ -9,7 +9,10 @@ return require('packer').startup(function(use)
     -- UI / Navigation
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { 
+            {'nvim-lua/plenary.nvim'},
+            {'nvim-tree/nvim-web-devicons'}
+        }
     }
 
     use "ellisonleao/gruvbox.nvim"
@@ -28,7 +31,7 @@ return require('packer').startup(function(use)
     -- Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+        run = ':TSUpdate',
     }
 
     use 'windwp/nvim-ts-autotag'
@@ -79,4 +82,16 @@ return require('packer').startup(function(use)
 
     -- Optional but VERY helpful
     use 'jay-babu/mason-nvim-dap.nvim'
+
+    -- File icons
+-- File Explorer
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons'
+        },
+        config = function()
+            require("nvim-tree").setup({})
+        end
+    }
 end)

@@ -4,6 +4,9 @@ if not ok then
 end
 
 ts.setup({
+    defaults = {
+        file_ignore_patterns = {}
+    },
     ensure_installed = {
         "vimdoc", "php", "javascript", "typescript",
         "rust", "cpp", "java", "zig", "go", "c",
