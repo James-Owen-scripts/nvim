@@ -4,7 +4,8 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 
 -- THEME
-vim.o.background = "light"
+require("catppuccin").setup({flavour = "latte"})
+
 vim.cmd([[colorscheme catppuccin]])
 
 vim.opt.guifont = "JetBrainsMono Nerd Font:h12"
