@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 
 -- THEME
-require("catppuccin").setup({flavour = "latte"})
+require("catppuccin").setup({ flavour = "latte" })
 
 vim.cmd([[colorscheme catppuccin]])
 
@@ -29,8 +29,8 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- PASTE TO SYSTEM CLIPBOARD
-vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
-vim.keymap.set({"n", "v"}, "<leader>P", [["+P]])
+vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
+vim.keymap.set({ "n", "v" }, "<leader>P", [["+P]])
 
 -- DELETE WITHOUT REGISTER
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
@@ -85,3 +85,14 @@ vim.keymap.set("n", "<leader>rl", ":set relativenumber<CR>")
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {
     desc = "Show diagnostic under cursor"
 })
+
+-- Remap switching split windows
+vim.keymap.set("n", "<M-1>", "<C-w>1w")
+vim.keymap.set("n", "<M-2>", "<C-w>2w")
+vim.keymap.set("n", "<M-3>", "<C-w>3w")
+vim.keymap.set("n", "<M-4>", "<C-w>4w")
+vim.keymap.set("n", "<M-5>", "<C-w>5w")
+vim.keymap.set("n", "<M-6>", "<C-w>6w")
+vim.keymap.set("n", "<M-7>", "<C-w>7w")
+vim.keymap.set("n", "<M-8>", "<C-w>8w")
+vim.keymap.set("n", "<M-9>", "<C-w>9w")
