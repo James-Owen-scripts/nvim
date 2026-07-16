@@ -4,8 +4,8 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 
 -- THEME
-vim.o.background = "dark"
-vim.cmd([[colorscheme gruvbox]])
+vim.o.background = "light"
+vim.cmd([[colorscheme catppuccin]])
 
 vim.opt.guifont = "JetBrainsMono Nerd Font:h12"
 
