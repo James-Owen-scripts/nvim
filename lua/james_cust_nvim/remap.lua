@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 
 -- THEME
-require("catppuccin").setup({ flavour = "latte" })
+require("catppuccin").setup({ flavour = "frappe" })
 
 vim.cmd([[colorscheme catppuccin]])
 
